@@ -27,6 +27,13 @@ textarea {
   }
 }
 
+.top-image {
+  background: url("top_image.png");
+  width: 100%;
+  height: auto;
+  background-size: cover;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
