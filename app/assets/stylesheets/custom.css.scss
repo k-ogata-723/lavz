@@ -13,6 +13,20 @@ $gray-medium-light: #eaeaea;
 
 /* landing */
 
+.btn-primary {
+  background-color:  #3ABD8A;
+  border-radius: 5px;
+}
+
+.btn-default {
+  color: #3ABD8A;
+  background-color: #F9F9F9;
+  // border: 2px solid #3ABD8A;
+  // box-sizing: border-box;
+  box-shadow: 0 0 0 2px #3ABD8A inset;
+  border-radius: 5px;
+}
+
 
 /* universal */
 
@@ -37,8 +51,8 @@ textarea {
 
 .top-image {
   background: url("top_image.png");
-  // max-width: 100%;
-  // height: auto;
+  max-width: 100%;
+  height: auto;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -187,6 +201,10 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.btn-form {
+  border-color: #3ABD8A;
 }
 
 /* Users index */
