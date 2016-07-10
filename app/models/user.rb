@@ -68,7 +68,13 @@ class User < ActiveRecord::Base
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
-  
+
+  #試作feedの定義
+  #完全な実装は第12章「ユーザーをフォローする」を参照してください。
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
   private
 
     # メールアドレスをすべて小文字にする
