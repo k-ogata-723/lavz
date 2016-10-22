@@ -1,12 +1,20 @@
 class StaticPagesController < ApplicationController
-  def landing
+
+  def index
     render :layout => 'landing'
+    @microposts = Micropost.paginate(page: params[:page])
+    #ログイン済みであれば、そのユーザーのマイクロポスト一覧を表示する
+    if logged_in?
+        @micropost = current_user.microposts.build
+        @feed_items = current_user.feed.paginate(page: params[:page])
+    end
   end
 
   def home
     if logged_in?
         @micropost = current_user.microposts.build
         @feed_items = current_user.feed.paginate(page: params[:page])
+    end
   end
 
   def help
