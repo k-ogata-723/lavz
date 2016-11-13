@@ -1,8 +1,8 @@
 # EC2サーバーのIP、EC2サーバーにログインするユーザー名、サーバーのロールを記述
-server '00.00.000.000', user: 'koki', roles: %w{app db web}
+server '52.198.38.219', user: 'koki', roles: %w{app db web}
 
 #デプロイするサーバーにsshログインする鍵の情報を記述
-set :ssh_options, keys: '~/.ssh/lavz-key-rsa' 
+set :ssh_options, keys: '~/.ssh/lavz-key-rsa'
 
 # server-based syntax
 # ======================
