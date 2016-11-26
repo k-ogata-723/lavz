@@ -15,12 +15,28 @@ $gray-medium-light: #eaeaea;
 
 .btn-primary {
   background-color:  #3ABD8A;
+  border-color: #3ABD8A;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color:  #05905B;
+  border-color: #05905B;
   border-radius: 5px;
 }
 
 .btn-default {
   color: #3ABD8A;
-  background-color: #F9F9F9;
+  background-color: #3ABD8A;
+  // border: 2px solid #3ABD8A;
+  // box-sizing: border-box;
+  box-shadow: 0 0 0 2px #3ABD8A inset;
+  border-radius: 5px;
+}
+
+.btn-default:hover {
+  color: #05905B;
+  background-color: #05905B;
   // border: 2px solid #3ABD8A;
   // box-sizing: border-box;
   box-shadow: 0 0 0 2px #3ABD8A inset;
@@ -246,13 +262,21 @@ input {
     border-radius: 5px;
     margin-bottom: 15px;
   }
+
+  li:hover{
+    padding: 10px;
+    border: 1px solid #3ABD8A;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
   .user {
     margin-top: 5em;
     padding-top: 0;
   }
   .content {
     display: block;
-    margin-left: 60px;
+    // マイクロポスト内の画像表示をなくしたからmargin-left: をコメントアウト
+    // margin-left: 60px;
     img {
       display: block;
       padding: 5px 0;
@@ -261,7 +285,8 @@ input {
   .timestamp {
     color: $gray-light;
     display: block;
-    margin-left: 60px;
+    // マイクロポスト内の画像表示をなくしたからmargin-left: をコメントアウト
+    // margin-left: 60px;
   }
   .gravatar {
     float: left;

@@ -1,6 +1,7 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
+  <!-- デザインに合わせるために、再度のユーザー情報を非表示に -->
+  <!-- <aside class="col-md-4">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
@@ -10,8 +11,18 @@
     <section class="stats">
       <%= render 'shared/stats' %>
     </section>
-  </aside>
+  </aside> -->
   <div class="col-md-8">
+    <!-- ユーザー情報を追加 -->
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
@@ -20,5 +31,8 @@
       </ol>
       <%= will_paginate @microposts %>
     <% end %>
+  </div>
+  <div class="col-md-4">
+    ここにタグが表示される
   </div>
 </div>
