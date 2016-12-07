@@ -90,7 +90,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
-  margin-top: 130px;
+  // margin-top: 130px;
 }
 
 h2 {
@@ -173,7 +173,7 @@ footer {
 
 aside {
   section.user_info {
-    margin-top: 20px;
+    // margin-top: 20px;
   }
   section {
     padding: 10px 0;
@@ -198,8 +198,10 @@ aside {
 }
 
 .gravatar {
-  float: left;
-  margin-right: 10px;
+  // float: left;
+  // margin-right: 10px;
+  // margin-bottom: 30px;
+  border-radius: 50%;
 }
 
 .gravatar_edit {
@@ -295,6 +297,15 @@ input {
   }
 }
 
+.pagination .active a {
+  background: #3ABD8A;
+  border: #3ABD8A;
+}
+
+.pagination li a {
+  color: #3ABD8A;
+}
+
 aside {
   textarea {
     height: 100px;
@@ -307,4 +318,10 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+.stat {
+  font-size: 20px;
+  letter-spacing: 0.01em;
+  color: black;
 }
