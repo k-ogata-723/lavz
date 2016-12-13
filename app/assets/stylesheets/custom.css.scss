@@ -202,6 +202,7 @@ aside {
   // margin-right: 10px;
   // margin-bottom: 30px;
   border-radius: 50%;
+  // size: 190px;
 }
 
 .gravatar_edit {
@@ -250,6 +251,11 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+
+// users
+.name {
+  font-size: 20px;
 }
 
 /* microposts */
