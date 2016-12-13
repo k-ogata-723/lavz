@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def index
-    render :layout => 'landing'
+    # render :layout => 'landing'
     @microposts = Micropost.paginate(page: params[:page])
     #ログイン済みであれば、そのユーザーのマイクロポスト一覧を表示する
     if logged_in?
