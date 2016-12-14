@@ -1,5 +1,6 @@
 class LandingsController < ApplicationController
-  def landing
-    render :layout => 'landing'
+  def index
+    @microposts = Micropost.all
+    render 'static_pages/landing'
   end
 end

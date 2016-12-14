@@ -12,16 +12,18 @@
   </h2>
 </div>
 
-<div class="container">
+<div class="container" style="margin-bottom: 30px;">
   <div class="buttons" style="text-align: center;">
     <%= link_to "Sign up", signup_path, class: "btn-lg btn-primary" %>
     <%= link_to "log in",  login_path,  class: "btn-lg btn-default" %>
   </div>
 </div>
 
-<!-- <ol class="microposts">
-  <%= render @microposts %>
-</ol> -->
+<div class="col-md-8">
+  <ol class="microposts">
+    <%= render @microposts %>
+  </ol>
+</div>
 
 </body>
 
