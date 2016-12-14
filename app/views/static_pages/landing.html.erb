@@ -2,29 +2,33 @@
 <%= stylesheet_link_tag "landing.js" %>
 
 <body style="padding-top: 0px;">
-
-<div class="img-responsive top-image jumbotron" style="background-color: #F9F9F9;">
-  <h1 style="color: white; font-family: 'Helvetica Neue'; font-weight: 100; letter-spacing: 0.5px; font-size: 600%; margin-top: 120px;">
-    Lavz
-  </h1>
-  <h2 style="color: white; font-family: 'Helvetica Neue'; font-weight: 100; letter-spacing: 0.5px; font-size: 250%;">
-    Share and Manage Protocols<br>in Biological Experiments
-  </h2>
-</div>
-
-<div class="container" style="margin-bottom: 30px;">
-  <div class="buttons" style="text-align: center;">
-    <%= link_to "Sign up", signup_path, class: "btn-lg btn-primary" %>
-    <%= link_to "log in",  login_path,  class: "btn-lg btn-default" %>
+  <div class="img-responsive top-image jumbotron" style="background-color: #F9F9F9;">
+    <h1 style="color: white; font-family: 'Helvetica Neue'; font-weight: 100; letter-spacing: 0.5px; font-size: 600%; margin-top: 120px;">
+      Lavz
+    </h1>
+    <h2 style="color: white; font-family: 'Helvetica Neue'; font-weight: 100; letter-spacing: 0.5px; font-size: 250%;">
+      Share and Manage Protocols<br>in Biological Experiments
+    </h2>
   </div>
-</div>
 
-<div class="col-md-8">
-  <ol class="microposts">
-    <%= render @microposts %>
-  </ol>
-</div>
+  <div class="container" style="margin-bottom: 30px;">
+    <div class="buttons" style="text-align: center;">
+      <%= link_to "Sign up", signup_path, class: "btn-lg btn-primary" %>
+      <%= link_to "log in",  login_path,  class: "btn-lg btn-default" %>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-md-8">
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    ここにタグが表示される
+  </div>
 </body>
 
 <!-- landing.jsファイルを読み込み -->
