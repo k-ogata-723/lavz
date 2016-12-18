@@ -174,11 +174,11 @@ footer {
 
 aside {
   section.user_info {
-    margin-top: 20px;
+    font-size: 10px;
   }
   section {
     padding: 10px 0;
-    margin-top: 40px;
+    margin-top: 20px;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -254,10 +254,18 @@ input {
   }
 }
 
-// users
-.name {
-  font-size: 20px;
+/* users */
+
+// homeとshowのユーザー情報を.user_infoで整えるためにコメントアウト
+// .name {
+//   font-size: 20px;
+// }
+
+// homeとshowのユーザー情報のデザインを整えるために追加
+.user_info {
+  font-size: 10px;
 }
+
 
 /* microposts */
 

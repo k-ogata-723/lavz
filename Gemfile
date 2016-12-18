@@ -18,6 +18,7 @@ gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'mysql2',       '~> 0.3.20'
 gem 'rmagick',      :require => 'RMagick'
+gem 'react-rails',  '~> 1.7.0'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
