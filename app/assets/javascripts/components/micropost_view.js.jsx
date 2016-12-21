@@ -6,22 +6,21 @@ var MicropostView = React.createClass({
     };
   },
 
-  ajaxMain: function(){
+  ajaxMain: function(method){
     console.log("hello world!");
     //ここで投稿があった後にマイクロポスト作成のURLを叩く
     $.ajax({
-      url: this.props.url,
-      type:method
-      dataType: 'json',
+      url:this.props.url,
+      type:method,
+      dataType:'json',
       cache:false,
       //ここは後で設定
-      data: {content: this.props.content, user_id:this.props.id}
-      //
+      data: {post_id: this.props.post},
       success: function(data) {
            //ここはあとで活きてきます笑
-           this.setState({is_liked: data.liked});
+           if(data.like){
+             this.setState({is_liked: data.liked});
               //responseのlikedをstateのis_likedに反映させます
-              if(data.like){                                 
            };
            this.setState({counts: data.counts});
        //bindしないとthisが使えなくてエラりますw
@@ -29,8 +28,7 @@ var MicropostView = React.createClass({
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
       }.bind(this)
-      }
-    })
+    });
   },
 
   render: function(){

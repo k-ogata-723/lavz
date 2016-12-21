@@ -269,6 +269,25 @@ input {
 
 /* microposts */
 
+.sidebar{
+  position: fixed;
+  color: #fff; /* 好みに応じて調節してください */
+}
+
+.sidebar.right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 270px;
+  background: #448AFF;
+}
+
+// #view-micropost {
+//   width: 100px;
+//   height: 100px;
+//   background: red;
+// }
+
 .microposts {
   list-style: none;
   padding: 0;
