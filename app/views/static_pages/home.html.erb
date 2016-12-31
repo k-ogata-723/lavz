@@ -1,27 +1,38 @@
 <% if logged_in? %>
   <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <h1>
-          <section class="user_info">
-            <%= render 'shared/user_info' %>
-            <%= render 'shared/stats' %>
-          </section>
-        </h1>
-        <section class="micropost_form">
-          <%= render 'shared/micropost_form' %>
+    <div class="row col-md-12">
+      <h1>
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+          <%= render 'shared/stats' %>
         </section>
-      </aside>
+      </h1>
+    </div>
+    <div class="col-md-8">
+        <button class="btn btn-primary btn-micropost">Post</button>
+        <!-- マイクロポスト投稿用のビュー
+        <div class="sidebar right col-md-6">Hello World</div>
+        ポスト用のボタン
+        <a href="#" class="btn btn-primary" data-action="toggle" data-side="right">
+          Post
+        </a> -->
+
+      <!-- </aside> -->
       <div>
         <h3>Micropost Feed</h3>
         <%= render 'shared/feed' %>
       </div>
     </div>
 
-    <div class="sidebar right">Hello World</div>
-    <!-- <div class="col-md-4 container">
-      <div id="view-micropost"></div>
-    </div> -->
+    <div class="col-md-4 container view-micropost">
+      <div id="view-micropost">
+        <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </div>
+      <h1>Message Box</h1>
+      <div id='content'></div>
+    </div>
   </div>
 <% else %>
 

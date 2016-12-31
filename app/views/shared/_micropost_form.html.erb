@@ -2,56 +2,48 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.1.0/jquery.sidebar.min.js"></script>
 
 <!-- マイクロソフト投稿用のビューを作成するために、いったんfotmをコメントアウト
-<%= form_for(@micropost, html: { multipart: true }) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
-  </div> -->
-  <!-- ボタンクリック後にすぐポストを生成するのではなく、ビューを生成したいのでコメントアウト -->
-  <!-- <%= f.submit "Post", class: "btn btn-primary btn-micropost" %> -->
-<!--
-  <span class="picture">
-    <%= f.file_field :picture, accept: "image/jpeg.iamge/gif,image/png" %>
-  </span>
-<% end %> -->
 
 <button class="btn-micropost btn-primary btn">Post</button>
 
-<!-- jQueryで投稿用のビュー作成スクリプトを記載 -->
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+jQueryで投稿用のビュー作成スクリプトを記載
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
+
 <script>
 $(document).ready(function() {
-  var sides = "right";
-
-  //サイドバーの初期化
-  for (var i = 0; i < sides.length; ++i) {
-    var cSide = sides[i];
-    $(".sidebar." + cSide).sidebar({side: cSide});
-  }
-
-  //ボタンのクリックで発動
-  $(".btn[data-action]").on("click", function(){
-    var $this = $(this);
-    var action = $this.attr("data-action");
-    vat side = $this.attr("data-side");
-    $(".sidebar." + side).trigger("sidebar:" + action);
-    return false;
-  });
+  var toggle_status = "closed";
+    $(".btn-micropost").click(function(){
+      if (toggle_status == "closed") {
+        $(".view-micropost").fadeIn(50);
+        console.log("opened");
+        toggle_status = "opened";
+      } else {
+        $(".view-micropost").fadeOut(50);
+        console.log("closed");
+        toggle_status = "closed";
+      }
+    });
 });
 
-// $(function() {
-//   $('#view-micropost').css('display', 'none');
-//   $('.btn-micropost').click(function() {
-//     $('#view-micropost').slideToggle(20);
-//   });
-// });
 </script>
 
-<script type="text/javascript">
+<%= form_for(@micropost, html: { multipart: true }) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+   <div class="field">
+     <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+   </div>
+
+   <%= f.submit "creat", class: "btn-post" %>
+
+   <span class="picture">
+     <%= f.file_field :picture, accept: "image/jpeg.iamge/gif,image/png" %>
+   </span>
+<% end %>
+
+<!-- <script type="text/javascript">
   $('#micropost_picture').bind('change', function() {
   var size_in_megabytes = this.files[0].size/1024/1024;
   if (size_in_megabytes > 5) {
     alert('Maximum file size is 5MB. Please choose a smaller file.');
   }
   });
-</script>
+</script> -->
