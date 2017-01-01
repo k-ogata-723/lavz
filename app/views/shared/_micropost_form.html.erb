@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 </script>
 
-<%= form_for(@micropost, html: { multipart: true }) do |f| %>
+<!-- <%= form_for(@micropost, html: { multipart: true }) do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
    <div class="field">
      <%= f.text_area :content, placeholder: "Compose new micropost..." %>
@@ -37,7 +37,7 @@ $(document).ready(function() {
    <span class="picture">
      <%= f.file_field :picture, accept: "image/jpeg.iamge/gif,image/png" %>
    </span>
-<% end %>
+<% end %> -->
 
 <!-- <script type="text/javascript">
   $('#micropost_picture').bind('change', function() {

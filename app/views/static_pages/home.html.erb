@@ -29,9 +29,15 @@
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
         </section>
+        <h1>Message Box</h1>
+        <!-- 動かないreactのコードなので、コメントアウトする
+        <div id="content"></div>
+        <div class="messageBox"  data-reactid=".0">
+          This is messagebox
+        </div> -->
+        <%= p = react_component 'MessageBox' %>
+        <!-- <div id="content">test</div> -->
       </div>
-      <h1>Message Box</h1>
-      <div id='content'></div>
     </div>
   </div>
 <% else %>

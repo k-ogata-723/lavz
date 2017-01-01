@@ -1,6 +1,7 @@
 $(function() {
   ReactDOM.render(
-    <h1>Hello react with rails</h1>,
+    <MessageBox url="/microposts"/>,
+    // <h1>this is id = content</h1>,
     document.getElementById('content')
   );
 });
