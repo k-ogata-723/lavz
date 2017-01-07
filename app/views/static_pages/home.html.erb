@@ -10,14 +10,6 @@
     </div>
     <div class="col-md-8">
         <button class="btn btn-primary btn-micropost">Post</button>
-        <!-- マイクロポスト投稿用のビュー
-        <div class="sidebar right col-md-6">Hello World</div>
-        ポスト用のボタン
-        <a href="#" class="btn btn-primary" data-action="toggle" data-side="right">
-          Post
-        </a> -->
-
-      <!-- </aside> -->
       <div>
         <h3>Micropost Feed</h3>
         <%= render 'shared/feed' %>
@@ -30,13 +22,7 @@
           <%= render 'shared/micropost_form' %>
         </section>
         <h1>Message Box</h1>
-        <!-- 動かないreactのコードなので、コメントアウトする
-        <div id="content"></div>
-        <div class="messageBox"  data-reactid=".0">
-          This is messagebox
-        </div> -->
         <%= p = react_component 'MessageBox' %>
-        <!-- <div id="content">test</div> -->
       </div>
     </div>
   </div>
