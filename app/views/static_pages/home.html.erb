@@ -12,10 +12,6 @@
           <%= render 'shared/micropost_form' %>
         </section>
         <%= react_component 'Micropost' %>
-        <!-- Micropost投稿ようのreactコードを実行 -->
-        <%= @micropost = react_component 'MicropostView',
-              content: content, url: /microposts
-        %>
       </aside>
       <div>
         <h3>Micropost Feed</h3>
