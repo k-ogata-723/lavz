@@ -8,7 +8,7 @@ class MicropostsController < ApplicationController
       flash[:success] = "Micropost created!"
       redirect_to home_path
     else
-      @feed_items []
+      @feed_items = []
       render 'static_pages/home'
     end
   end
@@ -17,6 +17,9 @@ class MicropostsController < ApplicationController
     @micropost.destroy
     flash[:success] = "Micropost deleted"
     redirect_to request.referrer || home_path
+  end
+
+  def show
   end
 
   private
