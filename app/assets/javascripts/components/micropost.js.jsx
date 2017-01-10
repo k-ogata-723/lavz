@@ -10,10 +10,12 @@ var MessageBox = React.createClass({
       datatype: 'json',
       type: 'POST',
       beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-      data: message,
+      data: {
+        micropost: { content: message }
+      },
       success: function(message) {
         var newMessages = this.state.messages.concat(message);
-        this.setState({ messages: newMessages });
+        this.setState({ messages: newMessages, isLoading: false });
       }.bind(this),
       error: function(_xhr, status, err) {
         console.error(this.props.url, status, err.toString());
