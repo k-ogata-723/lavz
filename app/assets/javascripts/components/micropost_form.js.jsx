@@ -3,7 +3,7 @@ var MessageForm = React.createClass({
     event.preventDefault();
     var user = this.refs.user.value.trim();
     // 親コンポーネントのMessageBocのイベントを呼び出す
-    this.props.onMessageSubmit( { user: user } );
+    this.props.onMessageSubmit( user );
     // フォームの内容を削除
     this.refs.user.value = '';
   },
