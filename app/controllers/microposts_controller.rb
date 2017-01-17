@@ -6,10 +6,10 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "Micropost created!"
-      redirect_to home_path
+      render json: @micropost
     else
       @feed_items = []
-      render 'static_pages/home'
+      render json: @micropost
     end
   end
 
