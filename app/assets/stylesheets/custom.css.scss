@@ -13,6 +13,10 @@ $gray-medium-light: #eaeaea;
 
 /* landing */
 
+.landing {
+  height: 100%;
+}
+
 .btn-primary {
   background-color:  #3ABD8A;
   border-color: #3ABD8A;
@@ -23,6 +27,18 @@ $gray-medium-light: #eaeaea;
   background-color:  #05905B;
   border-color: #05905B;
   border-radius: 5px;
+}
+
+.btn-old-micropost {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding-left: 20px;
+  padding-top:  10px;
+  padding-bottom: 5px;
+  background-color: white;
+  border-color: white;
+  box-shadow: white;
 }
 
 .btn-default {
@@ -45,10 +61,14 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
-//ヘッダーのnav-fixed-topを外して、ヘッダーがbodyの影響を受けるようになったのでコメントアウト
-// body {
-//   padding-top: 150px;
-// }
+html {
+  height: 100%;
+}
+
+body {
+  // padding-top: 150px;
+  height: 100%;
+}
 
 section {
   overflow: auto;
@@ -268,6 +288,35 @@ input {
 
 
 /* microposts */
+
+// .sidebar{
+//   position: fixed;
+//   color: #fff; /* 好みに応じて調節してください */
+// }
+//
+// .sidebar.right {
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   width: 270px;
+//   background: #448AFF;
+// }
+
+.container #view-micropost {
+  width: auto;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container .view-micropost {
+  display: none;
+  background: white;
+  border: 1px solid #3ABD8A;
+  // border-width: 1px;
+  border-radius: 5px;
+  height: 100%;
+}
 
 .microposts {
   list-style: none;
