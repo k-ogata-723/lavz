@@ -1,4 +1,0 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> create-micropost-react
