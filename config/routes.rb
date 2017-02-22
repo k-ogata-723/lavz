@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   resources :microposts,          only: [:create, :destroy, :show, :update]
   resources :relationships,       only: [:create, :destroy]
   resources :landings
-  resources :protocoles
+  resources :protocols
 end

@@ -1,4 +1,7 @@
 class ProtocolsController < ApplicationController
+  before_action :logged_in_user, only: [:create, :destroy, :show, :update]
+  before_action :set_protocol, only: [:destroy, :show]
+
   def index
   end
 
@@ -23,4 +26,5 @@ class ProtocolsController < ApplicationController
     end
 
     def set_protocol
-end
+    end
+  end
