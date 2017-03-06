@@ -55,9 +55,9 @@ var MessageBox = React.createClass({
         success: function(message) {
           initial_messages = [];
           var newMessages = initial_messages.concat(message);
-          // console.log(newMessages);
           this.setState({ messages: newMessages });
           console.log(message);
+          console.log('yobidasuyo-');
         }.bind(this),
         error: function(_xhr, status, err) {
           console.error(this.props.url, status, err.toString());
@@ -67,6 +67,7 @@ var MessageBox = React.createClass({
   },
 
   render: function() {
+
     var messageItems = this.state.messages.map(function(message) {
       return (
         <MessageItem key={message.id} message={message}/>
@@ -78,7 +79,7 @@ var MessageBox = React.createClass({
         <h1>Message Box</h1>
         <div className="messageBox">
           {messageItems}
-          <MessageForm onMessageSubmit={this.handleMessageSubmit}/>
+          <MessageForm onMessageSubmit={this.handleMessageSubmit} micropostValue={this.state.messages}/>
         </div>
       </div>
     );

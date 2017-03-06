@@ -1,7 +1,6 @@
 var ProtocolBox = React.createClass({
   getInitialState: function() {
     return { messages: [], isLoading: true};
-  console.log("ProtocolBox");
   },
 
   componentDidMount: function() {
@@ -66,6 +65,7 @@ var ProtocolBox = React.createClass({
     }
   },
 
+
   render: function() {
     var messageItems = this.state.messages.map(function(message) {
       return (
@@ -73,10 +73,9 @@ var ProtocolBox = React.createClass({
       );
     });
 
-
     return (
       <div>
-        <h1>ProtocolBox</h1>
+        <h1>ProtocolBoxs</h1>
         <div className="messageBox">
           {messageItems}
           <ProtocolForm onMessageSubmit={this.handleMessageSubmit}/>
