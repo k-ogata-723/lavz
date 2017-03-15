@@ -6,7 +6,7 @@ var ProtocolBox = React.createClass({
   handleprotocolsubmit: function(protocol) {
     // console.log(this.state.protocols);
     // protocolsがからのときにプロトコールを作成する
-    console.log('protocolのPOSTのlog', this.state.messages);
+    console.log('micropost_idを出力するlog', this.props.protocolValue[0].id);
     if (this.state.protocols == "") {
       $.ajax({
         url: 'protocols',
@@ -14,7 +14,7 @@ var ProtocolBox = React.createClass({
         type: 'POST',
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
         data: {
-          protocol: { procedure: protocol, micropost_id: 10 }
+          protocol: { procedure: protocol, micropost_id: this.props.protocolValue[0].id }
         },
         success: function(protocol) {
           var newprotocols = this.state.protocols.concat(protocol);

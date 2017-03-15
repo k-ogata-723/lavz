@@ -9,7 +9,7 @@ var MessageForm = React.createClass({
   },
 
   render: function() {
-    console.log('kore', this.props.micropostValue.length);
+    console.log('kore', this.props.micropostValue);
     if (this.props.micropostValue.length !== 0) {
       return (
         <div>
@@ -17,7 +17,7 @@ var MessageForm = React.createClass({
             <input type="text" placeholder="Title" ref='user'/>
             <input type="submit" value="Post" />
           </form>
-          <div><ProtocolBox /></div>
+          <div><ProtocolBox protocolValue={this.props.micropostValue}/></div>
         </div>
       );
     } else {
