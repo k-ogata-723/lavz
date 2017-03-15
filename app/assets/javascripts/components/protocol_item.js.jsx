@@ -1,8 +1,8 @@
 var ProtocolItem = React.createClass ({
   render: function() {
     return (
-      <div className="message">
-        <h2 className="messageUser">{this.props.message.concat}</h2>
+      <div className="protocol">
+        <h2 className="protocolUser">{this.props.protocol.concat}</h2>
       </div>
     );
   }

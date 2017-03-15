@@ -1,63 +1,48 @@
 var ProtocolBox = React.createClass({
   getInitialState: function() {
-    return { messages: [], isLoading: true};
+    return { protocols: [], isLoading: true};
   },
 
-  componentDidMount: function() {
-    $.ajax({
-      url: 'microposts/111',
-      dataType: 'json',
-      type: "GET",
-      cache:     false,
-      success: function(messages) {
-        this.setState({ messages: messages, isLoading: false });
-      }.bind(this),
-      error: function(_xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-
-  handleMessageSubmit: function(message) {
-    // console.log(this.state.messages);
-    // messagesがからのときにプロトコールを作成する
+  handleprotocolsubmit: function(protocol) {
+    // console.log(this.state.protocols);
+    // protocolsがからのときにプロトコールを作成する
     console.log('protocolのPOSTのlog', this.state.messages);
-    if (this.state.messages == "") {
+    if (this.state.protocols == "") {
       $.ajax({
         url: 'protocols',
         datatype: 'json',
         type: 'POST',
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
         data: {
-          protocol: { procedure: message, micropost_id: 10 }
+          protocol: { procedure: protocol, micropost_id: 10 }
         },
-        success: function(message) {
-          var newMessages = this.state.messages.concat(message);
-          this.setState({ messages: newMessages });
-          console.log(message);
+        success: function(protocol) {
+          var newprotocols = this.state.protocols.concat(protocol);
+          this.setState({ protocols: newprotocols });
+          console.log(protocol);
         }.bind(this),
         error: function(_xhr, status, err) {
           console.error(this.props.url, status, err.toString());
         }.bind(this)
       });
-      // messagesがすでに存在しているときに、マイクロポストをupdateする
+      // protocolsがすでに存在しているときに、マイクロポストをupdateする
     } else {
       // console.log("else");
-      // console.log(this.state.messages)
+      // console.log(this.state.protocols)
       $.ajax({
-        url: 'microposts/' + this.state.messages[0].id,
+        url: 'microposts/' + this.state.protocols[0].id,
         datatype: 'json',
         type: 'PATCH',
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
         data: {
-          protocol: { procedure: message, micropost_id: 10}
+          protocol: { procedure: protocol, micropost_id: 10}
         },
-        success: function(message) {
-          initial_messages = [];
-          var newMessages = initial_messages.concat(message);
-          // console.log(newMessages);
-          this.setState({ messages: newMessages });
-          console.log(message);
+        success: function(protocol) {
+          initial_protocols = [];
+          var newprotocols = initial_protocols.concat(protocol);
+          // console.log(newprotocols);
+          this.setState({ protocols: newprotocols });
+          console.log(protocol);
         }.bind(this),
         error: function(_xhr, status, err) {
           console.error(this.props.url, status, err.toString());
@@ -68,18 +53,18 @@ var ProtocolBox = React.createClass({
 
 
   render: function() {
-    var messageItems = this.state.messages.map(function(message) {
+    var protocolItems = this.state.protocols.map(function(protocol) {
       return (
-        <ProtocolItem key={message.id} message={message}/>
+        <ProtocolItem key={protocol.id} protocol={protocol}/>
       );
     });
 
     return (
       <div>
         <h1>ProtocolBoxs</h1>
-        <div className="messageBox">
-          {messageItems}
-          <ProtocolForm onMessageSubmit={this.handleMessageSubmit}/>
+        <div className="protocolBox">
+          {protocolItems}
+          <ProtocolForm onprotocolsubmit={this.handleprotocolsubmit}/>
         </div>
       </div>
     );
