@@ -21,6 +21,7 @@ var ProtocolBox = React.createClass({
   handleMessageSubmit: function(message) {
     // console.log(this.state.messages);
     // messagesがからのときにプロトコールを作成する
+    console.log('protocolのPOSTのlog', this.state.messages);
     if (this.state.messages == "") {
       $.ajax({
         url: 'protocols',
@@ -28,7 +29,7 @@ var ProtocolBox = React.createClass({
         type: 'POST',
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
         data: {
-          micropost: { content: message }
+          protocol: { procedure: message, micropost_id: 10 }
         },
         success: function(message) {
           var newMessages = this.state.messages.concat(message);
@@ -49,7 +50,7 @@ var ProtocolBox = React.createClass({
         type: 'PATCH',
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
         data: {
-          micropost: { content: message }
+          protocol: { procedure: message, micropost_id: 10}
         },
         success: function(message) {
           initial_messages = [];

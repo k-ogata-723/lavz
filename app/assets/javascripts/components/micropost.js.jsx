@@ -57,7 +57,6 @@ var MessageBox = React.createClass({
           var newMessages = initial_messages.concat(message);
           this.setState({ messages: newMessages });
           console.log(message);
-          console.log('yobidasuyo-');
         }.bind(this),
         error: function(_xhr, status, err) {
           console.error(this.props.url, status, err.toString());

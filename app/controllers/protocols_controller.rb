@@ -6,8 +6,8 @@ class ProtocolsController < ApplicationController
   end
 
   def create
-    @protocol = microposts.build(protocol_params)
-    if @protocole.save
+    @protocol = Protocol.new(protocol_params)
+    if @protocol.save
       flash[:success] = "Protocol created!"
       render json: @protocol
     else

@@ -9,9 +9,7 @@ var MessageForm = React.createClass({
   },
 
   render: function() {
-    console.log(this.props.onMessageSubmit);
     console.log('kore', this.props.micropostValue.length);
-    console.log(this.handleSubmit);
     if (this.props.micropostValue.length !== 0) {
       return (
         <div>
