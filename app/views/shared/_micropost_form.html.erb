@@ -11,7 +11,7 @@ jQueryで投稿用のビュー作成スクリプトを記載
 <script>
 $(document).ready(function() {
   var toggle_status = "closed";
-    $(".btn-micropost").click(function(){
+    $(".btn-old-micropost, .btn-micropost").click(function(){
       if (toggle_status == "closed") {
         $(".view-micropost").fadeIn(50);
         console.log("opened");

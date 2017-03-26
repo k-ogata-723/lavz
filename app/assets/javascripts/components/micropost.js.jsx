@@ -12,9 +12,10 @@ var MessageBox = React.createClass({
       cache:     false,
       success: function(messages) {
         this.setState({ messages: messages, isLoading: false });
+        console.log("componentDidMount success");
       }.bind(this),
       error: function(_xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
+        console.log("componentDidMount error");
       }.bind(this)
     });
   },

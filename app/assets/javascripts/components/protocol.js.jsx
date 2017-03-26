@@ -19,7 +19,7 @@ var ProtocolBox = React.createClass({
         success: function(protocol) {
           var newprotocols = this.state.protocols.concat(protocol);
           this.setState({ protocols: newprotocols });
-          console.log(protocol);
+          console.log('protocol POST success at first', this.state.protocols);
         }.bind(this),
         error: function(_xhr, status, err) {
           console.error(this.props.url, status, err.toString());
@@ -40,9 +40,9 @@ var ProtocolBox = React.createClass({
         success: function(protocol) {
           initial_protocols = [];
           var newprotocols = initial_protocols.concat(protocol);
-          // console.log(newprotocols);
+          console.log('protocols POST success again');
           this.setState({ protocols: newprotocols });
-          console.log(protocol);
+          console.log('protocols', protocols);
         }.bind(this),
         error: function(_xhr, status, err) {
           console.error(this.props.url, status, err.toString());
@@ -51,9 +51,10 @@ var ProtocolBox = React.createClass({
     }
   },
 
-
   render: function() {
+
     var protocolItems = this.state.protocols.map(function(protocol) {
+      // console.log('protocolItemss', this.state.message);
       return (
         <ProtocolItem key={protocol.id} protocol={protocol}/>
       );
