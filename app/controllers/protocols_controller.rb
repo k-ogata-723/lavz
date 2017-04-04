@@ -19,6 +19,13 @@ class ProtocolsController < ApplicationController
     render json: protocols
   end
 
+  def update
+    @protocol = Protocol.find(params[:id])
+    @protocol.update(protocol_params)
+
+    render json: @protocol
+  end
+
   private
 
     def protocol_params

@@ -76,7 +76,7 @@ var MessageBox = React.createClass({
 
     return (
       <div>
-        <h1>Message Box</h1>
+        <h2 className="title">Protocol Title</h2>
         <div className="messageBox">
           {messageItems}
           <MessageForm onMessageSubmit={this.handleMessageSubmit} micropostValue={this.state.messages}/>

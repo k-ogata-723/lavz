@@ -27,20 +27,21 @@ var ProtocolBox = React.createClass({
       });
       // protocolsがすでに存在しているときに、マイクロポストをupdateする
     } else {
+      console.log('before protocop PATCH',this.state.protocols[0].id);
       // console.log("else");
       // console.log(this.state.protocols)
       $.ajax({
-        url: 'microposts/' + this.state.protocols[0].id,
+        url: 'protocols/' + this.state.protocols[0].id,
         datatype: 'json',
         type: 'PATCH',
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
         data: {
-          protocol: { procedure: protocol, micropost_id: 10}
+          protocol: { procedure: protocol, micropost_id: this.props.protocolValue[0].id }
         },
         success: function(protocol) {
           initial_protocols = [];
           var newprotocols = initial_protocols.concat(protocol);
-          console.log('protocols POST success again');
+          console.log('protocols PATCH success again');
           this.setState({ protocols: newprotocols });
           console.log('protocols', protocols);
         }.bind(this),
@@ -62,7 +63,7 @@ var ProtocolBox = React.createClass({
 
     return (
       <div>
-        <h1>ProtocolBoxs</h1>
+        <h2 className="procedures">Procedures</h2>
         <div className="protocolBox">
           {protocolItems}
           <ProtocolForm onprotocolsubmit={this.handleprotocolsubmit}/>

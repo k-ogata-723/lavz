@@ -115,11 +115,38 @@ h1 {
   // margin-top: 130px;
 }
 
+h2.title {
+  font-size: 1.8em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: left;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+h2.procedures {
+    font-size: 1.8em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: left;
+    font-weight: normal;
+    color: $gray-light;
+}
+
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+label {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: left;
   font-weight: normal;
   color: $gray-light;
 }

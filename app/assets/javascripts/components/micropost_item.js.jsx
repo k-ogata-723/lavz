@@ -1,8 +1,17 @@
 var MessageItem = React.createClass ({
+  edit: function (todo) {
+    this.setState({editing: "test"});
+  },
+
+  handleEdit: function() {
+    this.edit();
+    this.setState({editText: "test"});
+  },
+
   render: function() {
     return (
       <div className="message">
-        <h2 className="messageUser">{this.props.message.content}</h2>
+        <label className="messageUser" onDoubleClick={this.handleEdit}>{this.props.message.content}</label>
       </div>
     );
   }
