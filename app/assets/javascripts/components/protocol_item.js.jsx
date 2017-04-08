@@ -1,10 +1,14 @@
 var ProtocolItem = React.createClass ({
   render: function() {
-    console.log("ProtocolItem", this.props.protocol);
-    return (
-      <div className="protocol">
-        <h2 className="protocolUser">{this.props.protocol.procedure}</h2>
-      </div>
-    );
+    console.log("protocol array length", this.props.protocol.length);
+    console.log("protocol array", this.props.protocol);
+    console.log("protocol array [0]", this.props.protocol[0]);
+    for ( i = 0; i < this.props.protocol.length; i++) {
+      return (
+        <div className="protocol">
+          <h2 className="protocolUser">{this.props.protocol[i].procedure}</h2>
+        </div>
+      );
+    }
   }
 });

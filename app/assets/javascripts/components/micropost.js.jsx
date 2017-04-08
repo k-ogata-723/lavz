@@ -35,7 +35,7 @@ var MessageBox = React.createClass({
         success: function(message) {
           var newMessages = this.state.messages.concat(message);
           this.setState({ messages: newMessages });
-          console.log(message);
+          console.log('1回目のmicropostのsetStateの後', this.state.messages);
         }.bind(this),
         error: function(_xhr, status, err) {
           console.error(this.props.url, status, err.toString());
@@ -57,7 +57,7 @@ var MessageBox = React.createClass({
           initial_messages = [];
           var newMessages = initial_messages.concat(message);
           this.setState({ messages: newMessages });
-          console.log(message);
+          console.log('2回目以降のmicropostのPATCHの後', this.state.messages);
         }.bind(this),
         error: function(_xhr, status, err) {
           console.error(this.props.url, status, err.toString());
