@@ -67,6 +67,7 @@ var MessageBox = React.createClass({
   },
 
   render: function() {
+    // console.log('test message', this.state.messages[0]['id']);
 
     var messageItems = this.state.messages.map(function(message) {
       return (
