@@ -54,20 +54,26 @@ var ProtocolBox = React.createClass({
     }
   },
 
+  // render: function() {
+  //   return (
+  //     <ProtocolItem key={protocol.id} protocol={protocol}/>
+  //   )
+  // },
+
   render: function() {
 
-    var protocolItems = this.state.protocols.map(function(protocol) {
-      // console.log('protocolItemss', this.state.message);
-      return (
-        <ProtocolItem key={protocol.id} protocol={protocol}/>
-      );
-    });
+    console.log('protocolItems', this.state.protocols);
+    // var protocolItems = function() {
+    //   return (
+    //     <ProtocolItem key={protocol.id} protocol={this.state.protocols}/>
+    //   );
+    // };
 
     return (
       <div>
         <h2 className="procedures">Procedures</h2>
         <div className="protocolBox">
-          {protocolItems}
+          <ProtocolItem protocol={this.state.protocols}/>
           <ProtocolForm onprotocolsubmit={this.handleprotocolsubmit}/>
         </div>
       </div>
