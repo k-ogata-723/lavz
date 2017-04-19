@@ -28,6 +28,7 @@ var ProtocolBox = React.createClass({
       });
       // protocolsがすでに存在しているときに、マイクロポストをupdateする
     } else {
+      // prococolがすでに存在している時のPOST ajax
       console.log('before protocol PATCH',this.state.protocols[0].id);
       // console.log("else");
       // console.log(this.state.protocols)
@@ -54,22 +55,8 @@ var ProtocolBox = React.createClass({
     }
   },
 
-  // render: function() {
-  //   return (
-  //     <ProtocolItem key={protocol.id} protocol={protocol}/>
-  //   )
-  // },
-
   render: function() {
-    // protocols = this.state.protocols[0];
-    // console.log('protocolItems', this.state.protocols[0]);
-    // console.log('protocolItems', protocols["id"]);
-    // var protocolItems = function() {
-    //   return (
-    //     <ProtocolItem key={protocol.id} protocol={this.state.protocols}/>
-    //   );
-    // };
-
+    // protocolsの中身をmapして、リスト形式で表示
     var protocolItems = this.state.protocols.map(function(protocol) {
       console.log('map protocol', protocol.procedure);
       return (
@@ -79,6 +66,8 @@ var ProtocolBox = React.createClass({
       );
     });
 
+    // このcomponetのprotocolItemsのfunctionを表示して
+    // ProtocolForm componentを呼び出して表示
     return (
       <div>
         <h2 className="procedures">Procedures</h2>

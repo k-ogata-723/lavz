@@ -11,6 +11,12 @@
 
 $gray-medium-light: #eaeaea;
 
+// react component
+
+.micropost-text {
+  outline: none;
+}
+
 /* landing */
 
 .landing {
@@ -21,12 +27,14 @@ $gray-medium-light: #eaeaea;
   background-color:  #3ABD8A;
   border-color: #3ABD8A;
   border-radius: 5px;
+  outline: none;
 }
 
 .btn-primary:hover {
   background-color:  #05905B;
   border-color: #05905B;
   border-radius: 5px;
+  outline: none;
 }
 
 .btn-old-micropost {
@@ -41,6 +49,7 @@ $gray-medium-light: #eaeaea;
   box-shadow: white;
   margin: 2px;
   border-width: 0px;
+  outline: none;
 }
 
 .btn-default {

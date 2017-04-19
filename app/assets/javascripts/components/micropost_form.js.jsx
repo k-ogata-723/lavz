@@ -24,7 +24,7 @@ var MessageForm = React.createClass({
       return (
         <div>
           <form className="commentForm" onSubmit={this.handleSubmit}>
-            <input type="text" placeholder="Title" ref='user'/>
+            <input type="text" placeholder="Title" ref='user' />
             <input type="submit" value="Post" />
           </form>
         </div>
