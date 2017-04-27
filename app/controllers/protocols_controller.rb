@@ -1,9 +1,14 @@
 class ProtocolsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :show, :update]
   before_action :set_protocol, only: [:destroy, :show]
+  helper_method :home_protocols
 
   def index
   end
+
+  # def home_protocols(micropost_id)
+  #   feed_protocol(micropost_id).first
+  # end
 
   def create
     @protocol = Protocol.new(protocol_params)

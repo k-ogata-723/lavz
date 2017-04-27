@@ -12,7 +12,14 @@
         <button class="btn btn-primary btn-micropost" style='outline: none'>Post</button>
       <div>
         <h3>Micropost Feed</h3>
-        <%= render 'shared/feed' %>
+        <% if @feed_items.any? %>
+          <% @feed_items.each do |feed_items| %>
+            <ol class="microposts">
+              <%= render 'shared/feed', feed_items: feed_items %>
+            </ol>
+          <% end %>
+          <%= will_paginate @feed_items %>
+        <% end %>
       </div>
     </div>
 

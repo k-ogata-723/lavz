@@ -87,8 +87,10 @@ class User < ActiveRecord::Base
                        OR user_id = :user_id", user_id: id)
   end
 
-  def feed_protocol
-    Protocols.where("micropost_id = ?", ).first
+  class << self
+    def feed_protocol(micropost_id)
+      Protocol.where("micropost_id = ?", micropost_id)
+    end
   end
 
   # ユーザーをフォローする

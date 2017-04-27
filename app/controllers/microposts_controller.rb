@@ -1,6 +1,7 @@
 class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :show, :update ]
   before_action :set_micropost, only: [:destroy, :show]
+  helper_method :feed_micropost_id
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
@@ -12,6 +13,11 @@ class MicropostsController < ApplicationController
       render json: @micropost
     end
   end
+
+  # def feed_micropost_id(micropost_id)
+  #   @micropost_procedure = feed_protocol(micropost_id)
+  # end
+
 
   def show
     messages = Micropost.find(params[:id])
