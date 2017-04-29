@@ -2,7 +2,7 @@
   <button class="btn-old-micropost view-protocol">
       <h2 class="title" style="margin: 0px"><%= micropost.content %></h2>
       <h2 class="messageBox" style="margin: 0px">
-        <%= User.feed_protocol(micropost.id).first.procedure %>
+        <%= User.feed_protocol(micropost.id) %>
       </h2>
         <%= image_tag micropost.picture.url if micropost.picture? %>
     <span class="timestamp">

@@ -89,7 +89,10 @@ class User < ActiveRecord::Base
 
   class << self
     def feed_protocol(micropost_id)
-      Protocol.where("micropost_id = ?", micropost_id)
+      if Protocol.where("micropost_id = ?", micropost_id).first
+        Protocol.where("micropost_id = ?", micropost_id).first.procedure
+      else
+      end
     end
   end
 
