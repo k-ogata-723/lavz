@@ -1,2 +1,2 @@
 #Lavz
-Bio生物学者向けプロトコル管理サービス
+Protocol management sevice for Bio
