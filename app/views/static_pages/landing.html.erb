@@ -3,10 +3,8 @@
 
 <body>
   <div class="img-responsive top-image jumbotron" style="background-color: #F9F9F9;">
-    <h1 style="color: white; font-family: 'Helvetica Neue'; font-weight: 100; letter-spacing: 0.5px; font-size: 600%; margin-top: 120px;">
-      Lavz
-    </h1>
-    <h2 style="color: white; font-family: 'Helvetica Neue'; font-weight: 100; letter-spacing: 0.5px; font-size: 250%;">
+    <h1 class="landing-title">Lavz</h1>
+    <h2 class="landing-slogan">
       Share and Manage Protocols<br>in Biological Experiments
     </h2>
   </div>
@@ -20,16 +18,18 @@
     </div>
 
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <ol class="microposts">
-          <%= render @microposts %>
+          <%= render @microposts.first(20) %>
         </ol>
       </div>
     </div>
 
+
+    <!-- タグ機能ができるまでコメントアウト
     <div class="col-md-4">
       ここにタグが表示される
-    </div>
+    </div> -->
   </div>
 
 </body>
