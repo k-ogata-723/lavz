@@ -8,19 +8,40 @@
 jQueryで投稿用のビュー作成スクリプトを記載
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
 
+
 <script>
+
+// 一覧のプロトコールボタンがクリックされた時に編集画面を表示
 $(document).ready(function() {
   var toggle_status = "closed";
-    $(".btn-old-micropost, .btn-micropost").click(function(){
-      if (toggle_status == "closed") {
-        $(".view-micropost").fadeIn(50);
-        console.log("opened");
-        toggle_status = "opened";
-      } else {
-        $(".view-micropost").fadeOut(50);
-        console.log("closed");
-        toggle_status = "closed";
-      }
-    });
+  $(".btn-old-micropost").click(function(){
+    if (toggle_status == "closed") {
+      $(".view-micropost-edit").fadeIn(50);
+      console.log("opened");
+      toggle_status = "opened 1";
+    } else {
+      $(".view-micropost-edit").fadeOut(50);
+      console.log("closed");
+      toggle_status = "closed";
+    }
+  });
 });
+
+// POSTボタンがクリックされた時に作成画面を表示
+$(document).ready(function() {
+  var toggle_status = "closed";
+  $(".btn-micropost").click(function(){
+    if (toggle_status == "closed") {
+      $(".view-micropost").fadeIn(50);
+      console.log("opened");
+      toggle_status = "opened";
+    } else {
+      $(".view-micropost").fadeOut(50);
+      console.log("closed");
+      toggle_status = "closed";
+    }
+  });
+});
+
+
 </script>

@@ -23,8 +23,20 @@
       </div>
     </div>
 
+    <!-- プロトコールの新規作成用のviewを作成 -->
     <div class="col-md-4 container view-micropost">
-      <div id="view-micropost">
+      <div>
+        <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+        </section>
+        <%= p = react_component 'MessageBox' %>
+        <!-- <%= p = react_component 'ProtocolBox' %> -->
+      </div>
+    </div>
+
+    <!-- プロトコールの編集用のviewを作成 -->
+    <div class="col-md-4 container view-micropost-edit">
+      <div>
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
         </section>

@@ -386,6 +386,15 @@ input {
   height: 100%;
 }
 
+.container .view-micropost-edit {
+  display: none;
+  background: white;
+  border: 1px solid #3ABD8A;
+  // border-width: 1px;
+  border-radius: 5px;
+  height: 100%;
+}
+
 .microposts {
   list-style: none;
   padding: 0;
