@@ -1,5 +1,5 @@
 <li id="micropost-<%= micropost.id %>">
-  <button class="btn-old-micropost view-protocol">
+  <button class="btn-old-micropost view-protocol" id="<%= micropost.id %>" >
       <h2 class="title" style="margin: 0px"><%= micropost.content %></h2>
       <h2 class="messageBox" style="margin: 0px">
         <%= User.feed_protocol(micropost.id) %>

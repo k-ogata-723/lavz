@@ -16,12 +16,14 @@ $(document).ready(function() {
   var toggle_status = "closed";
   $(".btn-old-micropost").click(function(){
     if (toggle_status == "closed") {
+      var id = $(this).attr("id");
       $(".view-micropost-edit").fadeIn(50);
-      console.log("opened");
+      console.log(id);
+      console.log("opened edit");
       toggle_status = "opened 1";
     } else {
       $(".view-micropost-edit").fadeOut(50);
-      console.log("closed");
+      console.log("closed edit");
       toggle_status = "closed";
     }
   });
