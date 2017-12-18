@@ -5,37 +5,42 @@ var EditMessageBox = React.createClass({
   },
 
   componentDidMount: function() {
-    $.ajax({
-      url: 'microposts/111',
-      dataType: 'json',
-      type: "GET",
-      cache:     false,
-      success: function(messages) {
-        this.setState({ messages: messages, isLoading: false });
-        console.log("componentDidMount success");
-      }.bind(this),
-      error: function(_xhr, status, err) {
-        console.log("componentDidMount error");
-      }.bind(this)
-    });
+    var micropost_id = this.refs.micropost_id.value;
+    console.log(micropost_id);
+
+    this.setState({ isMounted: true });
+    if (this.isMounted = true ) {
+      $.ajax({
+        url: 'microposts/111',
+        dataType: 'json',
+        type: "GET",
+        cache:     false,
+        success: function(messages) {
+          this.setState({ messages: messages, isLoading: false });
+          console.log("componentDidMount success");
+        }.bind(this),
+        error: function(_xhr, status, err) {
+          console.log("componentDidMount error");
+        }.bind(this)
+      });
+    }
   },
 
   handleMessageSubmit: function(message) {
     // console.log(this.state.messages);
-    // messagesがからのときにマイクロポストを作成する
+    // micropostのidに紐づくidを取得する
     if (this.state.messages == "") {
       $.ajax({
-        url: 'microposts',
+        url: 'microposts/893',
         datatype: 'json',
-        type: 'POST',
+        type: 'GET',
+        data: {message: "test"},
         beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-        data: {
-          micropost: { content: message }
-        },
         success: function(message) {
           var newMessages = this.state.messages.concat(message);
           this.setState({ messages: newMessages });
-          console.log('1回目のmicropostのsetStateの後', this.state.messages);
+          console.log('micropostの取得に成功', this.state.messages);
+          console.log('micropostの取得に成功', message);
         }.bind(this),
         error: function(_xhr, status, err) {
           console.error(this.props.url, status, err.toString());
