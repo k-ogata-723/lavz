@@ -40,7 +40,8 @@
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
         </section>
-        <%= p = react_component 'EditMessageBox' %>
+        <!-- このsmapleをmicropost.idに変えればいけそう -->
+        <%= p = react_component('EditMessageBox', { sample: selected_id }) %>
         <!-- <%= p = react_component 'ProtocolBox' %> -->
       </div>
     </div>

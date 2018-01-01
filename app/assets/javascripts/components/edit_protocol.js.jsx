@@ -1,5 +1,6 @@
 var EditProtocolBox = React.createClass({
   getInitialState: function() {
+    getElementById
     return { protocols: [], isLoading: true};
   },
 

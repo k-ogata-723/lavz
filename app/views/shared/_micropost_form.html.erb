@@ -15,10 +15,11 @@ jQueryで投稿用のビュー作成スクリプトを記載
 $(document).ready(function() {
   var toggle_status = "closed";
   $(".btn-old-micropost").click(function(){
+    $("#selectedMicropostId").val($(this).data("id"));
     if (toggle_status == "closed") {
-      var id = $(this).attr("id");
+      var selected_id = $(this).attr("id");
       $(".view-micropost-edit").fadeIn(50);
-      console.log(id);
+      console.log(selected_id, "selected_micropost_id");
       console.log("opened edit");
       toggle_status = "opened 1";
     } else {

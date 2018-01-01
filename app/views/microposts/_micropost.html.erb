@@ -1,5 +1,14 @@
 <li id="micropost-<%= micropost.id %>">
-  <button class="btn-old-micropost view-protocol" ref="micropost_id" value="<%= micropost.id %>" >
+  <!-- edit_micropost.js.jsxからselectedMicropostIdを取り出すためにjsxを利用 -->
+  <!-- <script type="text/jsx">
+     var HelloWorld = React.createClass({
+       render: function() {
+         return (
+           <p>Hello!World!</p>
+         );
+       }
+     }); -->
+  <button class="btn-old-micropost view-protocol" id="selectedMicropostId" selected_id="<%= micropost.id %>" >
       <h2 class="title" style="margin: 0px"><%= micropost.content %></h2>
       <h2 class="messageBox" style="margin: 0px">
         <%= User.feed_protocol(micropost.id) %>

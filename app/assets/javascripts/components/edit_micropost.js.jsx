@@ -1,11 +1,12 @@
 var EditMessageBox = React.createClass({
   getInitialState: function() {
+    console.log(this.props.sample);
     // isLoading = true : ロード中を表示
     return { messages: [], isLoading: true };
   },
 
   componentDidMount: function() {
-    var micropost_id = this.refs.micropost_id.value;
+    var micropost_id = this.refs.selectedMicropostId.value;
     console.log(micropost_id);
 
     this.setState({ isMounted: true });
